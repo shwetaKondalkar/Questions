@@ -1,5 +1,5 @@
 package hotelManagement;
 
-public enum Weekday { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday,
-    Saturday }
+public enum Weekday { SUN, MON, TUE, WED, THU, FRI,
+    SAT }
 

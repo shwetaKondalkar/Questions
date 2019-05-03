@@ -3,47 +3,47 @@ package hotelManagement;
 public class Hotel {
 	
 	String hotelName;
-    private int regularWeekDay;
-    private int regularWeekEnd;
-    private int rewardeeWeekDay;
-    private int rewardeeWeekEnd;
+    private Integer regularWeekDay;
+    private Integer regularWeekEnd;
+    private Integer rewardeeWeekDay;
+    private Integer rewardeeWeekEnd;
 
-    Hotel(String name,int regularWeekDay,int regularWeekEnd,int rewardeeWeekDay,int rewardeeWeekEnd) {
+    Hotel(String name,Integer regularWeekDay,Integer regularWeekEnd,Integer rewardeeWeekDay,Integer rewardeeWeekEnd) {
         this.hotelName = name;
 	this.regularWeekDay = regularWeekDay;
 	this.regularWeekEnd = regularWeekEnd;
 	this.rewardeeWeekDay = rewardeeWeekDay;
 	this.rewardeeWeekEnd = rewardeeWeekEnd;
     }
-    public int getRegularWeekDay() {
+    public Integer getRegularWeekDay() {
         return regularWeekDay;
     }
 
-    public void setRegularWeekDay(int regularWeekDay) {
+    public void setRegularWeekDay(Integer regularWeekDay) {
         this.regularWeekDay = regularWeekDay;
     }
 
-    public int getRegularWeekEnd() {
+    public Integer getRegularWeekEnd() {
         return regularWeekEnd;
     }
 
-    public void setRegularWeekEnd(int regularWeekEnd) {
+    public void setRegularWeekEnd(Integer regularWeekEnd) {
         this.regularWeekEnd = regularWeekEnd;
     }
 
-    public int getRewardeeWeekDay() {
+    public Integer getRewardeeWeekDay() {
         return rewardeeWeekDay;
     }
 
-    public void setRewardeeWeekDay(int rewardeeWeekDay) {
+    public void setRewardeeWeekDay(Integer rewardeeWeekDay) {
         this.rewardeeWeekDay = rewardeeWeekDay;
     }
 
-    public int getRewardeeWeekEnd() {
+    public Integer getRewardeeWeekEnd() {
         return rewardeeWeekEnd;
     }
 
-    public void setRewardeeWeekEnd(int rewardeeWeekEnd) {
+    public void setRewardeeWeekEnd(Integer rewardeeWeekEnd) {
         this.rewardeeWeekEnd = rewardeeWeekEnd;
     }
 
