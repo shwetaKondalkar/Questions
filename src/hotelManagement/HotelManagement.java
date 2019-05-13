@@ -10,11 +10,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HotelManagement {
-	
-	
+
+
 	public static void main(String[] args) throws IOException, ParseException {
 
+		// Hotel(String name,Integer regularWeekDay,Integer regularWeekEnd,Integer
+		// rewardeeWeekDay,Integer rewardeeWeekEnd)
 
+		HotelFactory hotelFactory = new HotelFactory();
 		Hotel lakeWood = new Hotel("LakeWood", 100, 120, 90, 60);
 		Hotel bridgeWood = new Hotel("RidgeWood", 130, 150, 100, 95);
 		Hotel ridgeWood = new Hotel("BridgeWood", 195, 150, 120, 90);
@@ -32,51 +35,26 @@ public class HotelManagement {
 		while (m.find()) {
 			results.add(m.group(1));
 		}
-		
-		
+
 		List<Hotel> hotelList = new ArrayList<>();
 		hotelList.add(lakeWood);
 		hotelList.add(bridgeWood);
 		hotelList.add(ridgeWood);
-		
-		List<String> cheapestHotelName = HotelFactory.findtheCheapestHotel(customerType,hotelList,results);
-		
+
 		for (String result : results) {
+			if (result.contains("sun") || result.contains("sat")) {
 
-			if (result.contains(Weekday.SUN) || result.contains("sat")) {
-				if (customerType.equalsIgnoreCase("regular")) {
-
-					findtheCheapestHotel(lakeWood.getRegularWeekEnd(), bridgeWood.getRegularWeekEnd(),
-							ridgeWood.getRegularWeekEnd());
-				} else {
-					findtheCheapestHotel(lakeWood.getRewardeeWeekEnd(), bridgeWood.getRewardeeWeekEnd(),
-							ridgeWood.getRewardeeWeekEnd());
-				}
+				Customer cust = new Customer.Builder().setType(customerType).setDay("Weekend").build();
+				hotelFactory.findtheCheapestHotel(hotelList, cust);
 			} else {
-				if (customerType.equalsIgnoreCase("regular")) {
-
-					findtheCheapestHotel(lakeWood.getRegularWeekDay(), bridgeWood.getRegularWeekDay(),
-							ridgeWood.getRegularWeekDay());
-				} else {
-					findtheCheapestHotel(lakeWood.getRewardeeWeekDay(), bridgeWood.getRewardeeWeekDay(),
-							ridgeWood.getRewardeeWeekDay());
-				}
-
+				Customer cust = new Customer.Builder().setType(customerType).setDay("Weekday").build();
+				hotelFactory.findtheCheapestHotel(hotelList, cust);
 			}
-
 		}
-
-
-
 	}
-
-	/*private static void findtheCheapestHotel(Integer regularWeekEnd, Integer regularWeekEnd2, Integer regularWeekEnd3) {
-
-	}
-*/
 }
 
-
+// INPUT : regular, 16Mar2010(sun), 19Mar2010(wed), 21Mar2010(Fri) , 21Mar2010(sat)
 
 /*
  * String remaining = s.replace(customerType, " ");

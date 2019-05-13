@@ -8,6 +8,12 @@ public class CheckIfAnagramString {
     {
         boolean result = isAnagram("now","own");
         System.out.println(result);
+        String s1 = "ABC";
+        String s2 =s1;
+       System.out.println(s1.equals(s2));
+       System.out.println(s1==s2);
+        
+        
     }
     public static boolean isAnagram(String first, String second)
     {

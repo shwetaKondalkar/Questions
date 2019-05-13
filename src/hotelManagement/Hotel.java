@@ -2,7 +2,7 @@ package hotelManagement;
 
 public class Hotel {
 	
-	String hotelName;
+	private String hotelName;
     private Integer regularWeekDay;
     private Integer regularWeekEnd;
     private Integer rewardeeWeekDay;
